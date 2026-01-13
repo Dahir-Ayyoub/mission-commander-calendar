@@ -1,20 +1,54 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🛰️ Mission Commander
 
-# Run and deploy your AI Studio app
+**Mission Commander** est une application desktop moderne (basée sur Electron et React) conçue pour transformer des feuilles de calcul Excel brutes en un tableau de bord de planification interactif et intelligent. 
 
-This contains everything you need to run your app locally.
+L'application utilise l'intelligence artificielle pour analyser votre charge de travail et générer des rapports PDF professionnels paginés.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1Sjev9ea1FZFZ_1pOxQ_HXjc4alFsb4ID
+## ✨ Fonctionnalités Clés
 
-## Run Locally
+- **📥 Import Excel Intelligent** : Glissez-déposez vos fichiers `.xlsx` ou `.xls`. L'application extrait automatiquement les dates et les intitulés de missions, tout en conservant l'intégralité des colonnes personnalisées dans les détails.
+- **📅 Calendrier Interactif** : Une vue mensuelle fluide pour visualiser la répartition des missions. Cliquez sur un jour pour voir les détails complets.
+- **🧠 Analyse IA (Gemini 3 Pro)** : Intégration directe avec l'API Google Gemini pour détecter les conflits de planning, les périodes de forte activité et obtenir des conseils stratégiques sur la gestion des missions.
+- **📄 Export PDF Professionnel** : Système d'exportation avancé qui gère automatiquement la pagination (multi-pages A4) pour garantir qu'aucune information n'est coupée, que ce soit pour un rapport global ou le détail d'une journée.
+- **🌓 Mode Sombre/Clair** : Interface utilisateur adaptative pour un confort visuel optimal de jour comme de nuit.
+- **🔍 Recherche & Filtres** : Moteur de recherche instantané pour retrouver une mission spécifique parmi des centaines d'entrées.
 
-**Prerequisites:**  Node.js
+## 🚀 Installation et Démarrage
 
+### Prérequis
+- [Node.js](https://nodejs.org/) (version 18 ou supérieure)
+- Une clé API Google Gemini (à configurer dans l'environnement)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Étapes
+1. **Installation des dépendances** :
+   ```bash
+   npm install
+   ```
+
+2. **Lancement en mode développement** :
+   ```bash
+   npm run dev
+   ```
+
+3. **Construction de l'exécutable (Windows)** :
+   ```bash
+   npm run dist
+   ```
+
+## 🛠️ Stack Technique
+
+- **Frontend** : React 19, Tailwind CSS (Styling), Lucide React (Icons).
+- **Runtime** : Electron (Application Desktop).
+- **Intelligence Artificielle** : SDK @google/genai (Modèle Gemini 3 Pro).
+- **Traitement de Données** : XLSX (Parsing Excel), date-fns (Gestion du temps).
+- **Exportation** : jsPDF & html2canvas (Génération de documents paginés).
+
+## 📊 Format Excel Attendu
+
+Pour un fonctionnement optimal, votre fichier Excel doit contenir au minimum :
+- Une colonne nommée **"date"** (formats supportés : JJ/MM/AAAA ou format Date Excel).
+- Une colonne nommée **"mission"** (l'intitulé principal).
+- *Toutes les autres colonnes sont importées automatiquement comme détails supplémentaires.*
+
+---
+*Développé avec précision pour les gestionnaires de missions exigeants.*

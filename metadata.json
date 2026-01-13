@@ -1,0 +1,7 @@
+{
+  "name": "Mission Commander Calendar",
+  "description": "An intelligent mission planning tool that transforms Excel spreadsheets into an interactive calendar with AI-powered insights and GPS mapping.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

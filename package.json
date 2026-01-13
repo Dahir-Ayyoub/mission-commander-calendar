@@ -1,0 +1,29 @@
+
+{
+  "name": "mission-commander",
+  "version": "1.0.0",
+  "description": "Logiciel de planification de missions via Excel",
+  "author": "Mission Commander",
+  "main": "main.js",
+  "scripts": {
+    "dev": "npm run start:electron",
+    "build": "esbuild index.tsx --bundle --outfile=bundle.js --format=esm --loader:.tsx=tsx --loader:.ts=ts --define:process.env.API_KEY='\"\"' --platform=browser --target=chrome100",
+    "start:electron": "npm run build && electron .",
+    "dist": "npm run build && electron-packager . \"Mission Commander\" --platform=win32 --arch=x64 --out=dist --overwrite --icon=favicon.ico"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-packager": "^17.1.2",
+    "esbuild": "^0.20.2"
+  },
+  "dependencies": {
+    "@google/genai": "^1.35.0",
+    "lucide-react": "^0.400.0",
+    "date-fns": "^3.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "xlsx": "^0.18.5",
+    "jspdf": "^2.5.1",
+    "html2canvas": "^1.4.1"
+  }
+}
